@@ -89,12 +89,13 @@ ul a:hover {
     font-weight: bold;
     font-size: 2rem;
     margin-bottom: 20px;
-    transition: info 2s ease 1s;
+    
+    transition: all 0.3s ease;
 }
 
 .info:hover {
-    transform: translateY(-5px);
-    box-shadow: 10px 10px rgba(0, 0, 0, 0.5);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 .fb {
@@ -128,7 +129,9 @@ ul a:hover {
 
 .fb-text:focus {
     outline: none;
-    border: 3px solid rgb(102, 153, 51);
+    transform: translateY(-2px);
+    border: 2px solid #3852B4;
+    box-shadow: 0 0 8px rgba(56, 82, 180, 0.4);
 }
 
 .fb-submit {
@@ -142,9 +145,13 @@ ul a:hover {
     transition: 0.25s ease;
 }
 
-.fb-submit:focus {
-    border: 3px solid #3852B4;
-    background-color: rgb(102, 153, 51);
+.fb-submit:hover{
+    background-color: #2f4291;
+    transform: translateY(-2px);
+}
+
+.fb-submit:active {
+    transform: scale(0.95);
 }
 
 

@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Header Code */
+header {
+    background-color: #3852B4;
+    padding: 15px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ul{
+    width: 150px;
+    font-size: 1rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+ul a:hover {
+    color: wheat;
+    font-size: 1.03rem;
+}
+
+
+/* Main Code */
+.head{
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 10px
+}
+
+.section-1 {
+    width: 100%;
+    height: 408px;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.notes {
+    width: 250px;
+    height: 300px;
+    border: 4px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 20px;
+
+    transition: all 0.3s ease;
+}
+
+.notes a {
+    text-align: center;
+}
+
+.notes:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.why-notes {
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(210, 220, 255);
+}
+
+.why-notes ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.why-notes li {
+    margin: 5px 0;
+    color: #444;
+}
+
+
+
+/* Footer Code */
+footer {
+    background-color: #5E7AC4;
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+
+@media (max-width: 426px) {
+/* Header Code */
+    header {
+        padding: 10px;
+    }
+
+    .brand {
+        font-size: 1.5rem;
+    }
+    
+/* Main Code */
+.section-1{
+    height: auto;
+}
+    .notes {
+        width: 150px;
+        height: 200px;
+        border: 2px solid black;
+        font-size: 1rem;
+    }
+}
