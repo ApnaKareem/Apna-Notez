@@ -1,0 +1,338 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(145deg, #f8f9ff 0%, #f0f3fd 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header with Glassmorphism */
+header {
+    background: rgba(56, 82, 180, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 1rem 2rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #FFFFFF, #E0E7FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 0.8rem;
+    border-radius: 40px;
+    transition: all 0.25s ease;
+    font-size: 1rem;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #FFE8C5;
+    transform: translateY(-2px);
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    width: 100%;
+}
+
+.head {
+    text-align: center;
+    margin: 0.5rem 0 2rem;
+    font-size: 2.4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #1e2a5e, #3852B4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.head::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #3852B4;
+    margin: 0.5rem auto 0;
+    border-radius: 4px;
+}
+
+/* Textbooks Grid */
+.section-1 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 0.5rem 0 2.5rem;
+}
+
+.textbooks {
+    width: 260px;
+    height: 300px;
+    border-radius: 28px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: white;
+    transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(2px);
+    line-height: 1.3;
+    border-left: 10px solid black;
+}
+
+.section-1 a{
+    border-radius: 27px;
+}
+
+.section-1 a:hover{
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Individual semester colors */
+.textbooks[data-sem="1"] {
+    background: linear-gradient(135deg,	#ff3730, #ff0800);
+}
+
+.textbooks[data-sem="2"] {
+    background: linear-gradient(135deg, #36abd1, #00aeff);
+}
+
+.textbooks[data-sem="3"] {
+    background: linear-gradient(135deg, #F58529, #e07a1f);
+}
+
+.textbooks[data-sem="4"] {
+    background: linear-gradient(135deg, #474A8A, #35386e);
+}
+
+.textbooks[data-sem="5"] {
+    background: linear-gradient(135deg, #669933, #4d7a26);
+}
+
+.textbooks[data-sem="6"] {
+    background: linear-gradient(135deg, #9C3433, #7a2827);
+}
+
+
+/* Ripple effect */
+.textbooks {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(0);
+    animation: rippleAnim 0.5s linear;
+    pointer-events: none;
+}
+
+@keyframes rippleAnim {
+    to {
+        transform: scale(10);
+        opacity: 0;
+    }
+} 
+
+a {
+    text-decoration: none;
+    display: block;
+}
+
+/* Why Textbooks Section - Enhanced */
+.section-2 {
+    margin: 2rem 0 1rem;
+}
+
+.why-textbooks {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(120deg, #e9efff, #ffffff);
+    border-radius: 48px;
+    box-shadow: 0 8px 20px rgba(56, 82, 180, 0.1);
+    border: 1px solid rgba(56, 82, 180, 0.15);
+}
+
+.why-textbooks h2 {
+    font-size: 1.9rem;
+    color: #1e2a5e;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.why-textbooks ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.why-textbooks li {
+    font-size: 1.1rem;
+    background: #3852B4;
+    color: white;
+    padding: 0.6rem 1.4rem;
+    border-radius: 60px;
+    font-weight: 500;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.why-textbooks li:hover {
+    transform: translateY(-3px);
+    background: #2a3f94;
+    box-shadow: 0 6px 12px rgba(56, 82, 180, 0.3);
+}
+
+/* Footer */
+footer {
+    background: #1a2a6c;
+    text-align: center;
+    padding: 1.2rem;
+    color: #cfd9ff;
+    font-weight: 500;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 0.8rem 1.2rem;
+    }
+
+    .brand {
+        font-size: 1.4rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    .head {
+        font-size: 1.9rem;
+    }
+
+    .textbooks {
+        width: 220px;
+        height: 260px;
+        font-size: 1.5rem;
+    }
+
+    .textbooks::before {
+        font-size: 2rem;
+    }
+
+    .why-textbooks ul {
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .why-textbooks li {
+        width: 80%;
+    }
+}
+
+@media (max-width: 550px) {
+    main {
+        padding: 1rem;
+    }
+
+    .section-1 {
+        gap: 1.2rem;
+    }
+
+    .textbooks {
+        width: 170px;
+        height: 210px;
+        font-size: 1.2rem;
+    }
+
+    .textbooks::before {
+        font-size: 1.5rem;
+    }
+
+    .why-textbooks h2 {
+        font-size: 1.5rem;
+    }
+
+    .why-textbooks li {
+        font-size: 0.95rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Download hint on hover */
+.textbooks::after {
+    content: "⬇️ Click to access";
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    font-size: 0.75rem;
+    font-weight: normal;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    background: rgba(0, 0, 0, 0.5);
+    width: fit-content;
+    margin: 0 auto;
+    padding: 4px 10px;
+    border-radius: 30px;
+    color: white;
+}
+
+.textbooks:hover::after {
+    opacity: 1;
+}
