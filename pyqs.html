@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apna Notez | Previous Year Questions</title>
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="/Style/pyqs.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="brand">Apna Notez</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="notes.html">Notes</a></li>
+                <li><a href="textbooks.html">Textbooks</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 class="head">📝 Previous Year Questions</h1>
+
+        <!-- Filter Buttons -->
+        <div class="filter-section">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="1st">1st Year</button>
+            <button class="filter-btn" data-filter="2nd">2nd Year</button>
+            <button class="filter-btn" data-filter="3rd">3rd Year</button>
+        </div>
+
+        <!-- PYQs Grid -->
+        <section class="pyqs-grid" id="pyqsGrid">
+            <!-- 1st Year PYQs -->
+            <div class="pyq-card" data-year="1st">
+                <div class="card-header" style="background: linear-gradient(135deg, #F58529, #e07a1f);">
+                    <h3>Programming Fundamentals</h3>
+                    <div class="year">2023 - 2024</div>
+                </div>
+                <div class="card-body">
+                    <div class="subject">📖 C Programming</div>
+                    <div class="exam-type">End Semester Exam</div>
+                    <div class="questions-count">📝 12 Questions</div>
+                    <a href="#" class="download-btn">📥 Download PYQ</a>
+                </div>
+            </div>
+
+            <!-- 2nd Year PYQs -->
+            <div class="pyq-card" data-year="2nd">
+                <div class="card-header" style="background: linear-gradient(135deg, #474A8A, #35386e);">
+                    <h3>Data Structures</h3>
+                    <div class="year">2023 - 2024</div>
+                </div>
+                <div class="card-body">
+                    <div class="subject">📊 DSA</div>
+                    <div class="exam-type">End Semester Exam</div>
+                    <div class="questions-count">📝 15 Questions</div>
+                    <a href="#" class="download-btn">📥 Download PYQ</a>
+                </div>
+            </div>
+
+            <!-- 3rd Year PYQs -->
+            <div class="pyq-card" data-year="3rd">
+                <div class="card-header" style="background: linear-gradient(135deg, #669933, #4d7a26);">
+                    <h3>Web Development</h3>
+                    <div class="year">2023 - 2024</div>
+                </div>
+                <div class="card-body">
+                    <div class="subject">🌐 HTML/CSS/JS</div>
+                    <div class="exam-type">End Semester Exam</div>
+                    <div class="questions-count">📝 14 Questions</div>
+                    <a href="#" class="download-btn">📥 Download PYQ</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why PYQs Section -->
+        <section class="why-pyqs">
+            <h2>🎯 Why Solve Previous Year Questions?</h2>
+            <ul>
+                <li>✔ Understand exam pattern</li>
+                <li>✔ Important repeated questions</li>
+                <li>✔ Time management practice</li>
+                <li>✔ Boost confidence</li>
+            </ul>
+        </section>
+    </main>
+    <footer>Copyright &copy; 2026 Apna Notez | All Rights Reserved</footer>
+
+    <script>
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const pyqCards = document.querySelectorAll('.pyq-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                // Filter cards
+                pyqCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-year') === filterValue) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 200);
+                    }
+                });
+            });
+        });
+
+        // Ripple effect on cards
+        pyqCards.forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (e.target.classList.contains('download-btn')) return;
+                
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = `${size}px`;
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.backgroundColor = 'rgba(56, 82, 180, 0.3)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'rippleAnim 0.5s linear';
+                ripple.style.pointerEvents = 'none';
+                
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+                
+                setTimeout(() => ripple.remove(), 500);
+            });
+        });
+
+        // Animation keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes rippleAnim {
+                to {
+                    transform: scale(6);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        console.log("%c📝 Apna Notez - PYQs ready! Practice previous year questions 🎯", "color: #3852B4; font-size: 14px; font-weight: bold;");
+    </script>
+</body>
+
+</html>

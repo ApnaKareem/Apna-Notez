@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apna Notez | Notes</title>
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="/Style/notes.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="brand">Apna Notez</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pyqs.html">PYQs</a></li>
+                <li><a href="textbooks.html">Textbooks</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 class="head">📖 Exam-Ready Notes</h1>
+        <section class="section-1">
+            <a href="https://drive.google.com/drive/folders/1Uy8vNsmQppgxdSp6rwlWtxYbvmf37oNB?usp=drive_link">
+                <div class="notes" style="border-left-color: #F58529;">
+                    Linux
+                    <br>
+                    Administration
+                </div>
+            </a>
+
+            <a href="https://drive.google.com/drive/folders/1Ip7feRVETpAd9fYfG7WLlpWI8xh-3LZQ?usp=drive_link">
+                <div class="notes" style="border-left-color: #474A8A;">
+                    PHP
+                    <br>
+                    Programming
+                </div>
+            </a>
+
+            <a href="https://drive.google.com/drive/folders/1UdNf5rHdp0QFIA3bMnOkMt4QozB5cHXZ?usp=drive_link">
+                <div class="notes" style="border-left-color: #669933;">
+                    Android
+                    <br>
+                    Programming
+                </div>
+            </a>
+
+            <a href="https://drive.google.com/drive/folders/1TDI64wMd5pouaizvcjExpDYAiCKX74V9?usp=drive_link">
+                <div class="notes" style="border-left-color: #9C3433;">
+                    Personality
+                    <br>
+                    & Career Skills
+                </div>
+            </a>
+        </section>
+
+        <section>
+            <div class="why-notes">
+                <h2>✨ Why You'll Love Our Notes?</h2>
+                <ul>
+                    <li>✔ Simple & easy language</li>
+                    <li>✔ Exam-focused content</li>
+                    <li>✔ Saves your study time</li>
+                    <li>✔ Free & accessible anytime</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>Copyright &copy; 2026 Apna Notez | All Rights Reserved</footer>
+
+    <script>
+        // Add ripple effect on notes cards for better feedback
+        const noteCards = document.querySelectorAll('.notes');
+        noteCards.forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Create ripple element
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = `${size}px`;
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                ripple.classList.add('ripple-effect');
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 500);
+            });
+            
+            // Optional: Add a subtle "click to download" title
+            const parentLink = card.closest('a');
+            if (parentLink) {
+                parentLink.setAttribute('title', 'Click to access notes folder');
+            }
+        });
+        
+        // Console greeting
+        console.log("%c📚 Apna Notez - Notes ready! Study efficiently 🚀", "color: #3852B4; font-size: 14px; font-weight: bold;");
+    </script>
+</body>
+
+</html>

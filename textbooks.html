@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apna Notez | Textbooks</title>
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="/Style/textbooks.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="brand">Apna Notez</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="notes.html">Notes</a></li>
+                <li><a href="pyqs.html">PYQs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 class="head">📚 Semester Textbooks</h1>
+        <section class="section-1">
+            <a href="https://drive.google.com/drive/folders/1xZMGGiHyUllM2DzAaFVdmh1FHs5cyYL_?usp=drive_link"
+                download="1st Semester Textbooks">
+                <div class="textbooks" data-sem="1">
+                    1st
+                    <br>
+                    Semester
+                </div>
+            </a>
+
+            <a href="https://drive.google.com/drive/folders/1pgGCOb5jEr9c6WKfsIPnVV9RvgL9LFQY?usp=drive_link"
+                download="2nd Semester Textbooks">
+                <div class="textbooks" data-sem="2">
+                    2nd
+                    <br>
+                    Semester
+                </div>
+            </a>
+
+            <a href="https://drive.google.com/drive/folders/1dq_vh1KDBNWh1_RsJ7KjwZKW61VM1UNh?usp=drive_link"
+                download="3rd Semester Textbooks">
+                <div class="textbooks" data-sem="3">
+                    3rd
+                    <br>
+                    Semester
+                </div>
+            </a>
+
+            <a href="https://drive.google.com/drive/folders/1p1rkwMiGNt4hwBLSb7wI-PupTZGsyZOR?usp=drive_link"
+                download="4th Semester Textbooks">
+                <div class="textbooks" data-sem="4">
+                    4th
+                    <br>
+                    Semester
+                </div>
+            </a>
+
+            <a href="https://drive.google.com/drive/folders/1B-HMspYRJ4q5VW0hi2MXa6YbL52NUGcf?usp=drive_link"
+                download="5th Semester Textbooks">
+                <div class="textbooks" data-sem="5">
+                    5th
+                    <br>
+                    Semester
+                </div>
+            </a>
+
+            <a href="https://drive.google.com/drive/folders/1UyLo_D6gZtMPUQ_-QIUJfwIQk-88HNny?usp=drive_link"
+                download="6th Semester Textbooks">
+                <div class="textbooks" data-sem="6">
+                    6th
+                    <br>
+                    Semester
+                </div>
+            </a>
+        </section>
+
+        <section class="section-2">
+            <div class="why-textbooks">
+                <h2>📖 Why Choose Our Textbook Collection?</h2>
+                <ul>
+                    <li>✔ Year-wise organized books</li>
+                    <li>✔ Semester-wise organized books</li>
+                    <li>✔ Easy access anytime, anywhere</li>
+                    <li>✔ Completely free resources</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>Copyright &copy; 2026 Apna Notez | All Rights Reserved</footer>
+
+    <script>
+        // Add ripple effect on textbook cards for better feedback
+        const textbookCards = document.querySelectorAll('.textbooks');
+        textbookCards.forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Create ripple element
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = `${size}px`;
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                ripple.classList.add('ripple-effect');
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 500);
+            });
+            
+            // Add tooltip title for accessibility
+            const parentLink = card.closest('a');
+            if (parentLink) {
+                const semesterText = card.innerText.replace(/\n/g, ' ').trim();
+                parentLink.setAttribute('title', `Access ${semesterText} Textbooks`);
+            }
+        });
+        
+        // Add semester info in console
+        console.log("%c📚 Apna Notez - Textbooks ready! Semester-wise resources loaded 🎓", "color: #3852B4; font-size: 14px; font-weight: bold;");
+        
+        // Optional: Add a subtle animation on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.textbooks');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+
+</html>

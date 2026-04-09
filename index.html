@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apna Notez</title>
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="/Style/style.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="brand">Apna Notez</h1>
+        <nav>
+            <ul>
+                <li><a href="notes.html">Notes</a></li>
+                <li><a href="pyqs.html">PYQs</a></li>
+                <li><a href="textbooks.html">Textbooks</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="greet">
+            <h2 class="greet-text">✨ Welcome to Apna Notez!</h2>
+            <p class="desc">
+                All your study materials in one place — simple, clear, and exam-ready.
+            </p>
+        </div>
+
+        <h1 class="head">🌟 Why Students Love Apna Notez?</h1>
+        <section class="stat">
+            <a href="notes.html" style="color: #474A8A;">
+                <div class="info" style="border-left-color: #474A8A;">
+                    34+
+                    <br>
+                    <span style="font-size: 0.9rem; font-weight: 500;">Notes</span>
+                </div>
+            </a>
+
+            <a href="pyqs.html" style="color: #F58529;">
+                <div class="info" style="border-left-color: #F58529;">
+                    11+
+                    <br>
+                    <span style="font-size: 0.9rem; font-weight: 500;">Q. Papers</span>
+                </div>
+            </a>
+
+            <a href="textbooks.html" style="color: #669933;">
+                <div class="info" style="border-left-color: #669933;">
+                    23+
+                    <br>
+                    <span style="font-size: 0.9rem; font-weight: 500;">Textbooks</span>
+                </div>
+            </a>
+
+            <a href="textbooks.html" style="color: #9C3433;">
+                <div class="info" style="border-left-color: #9C3433;">
+                    19+
+                    <br>
+                    <span style="font-size: 0.9rem; font-weight: 500;">Subjects</span>
+                </div>
+            </a>
+        </section>
+
+        <section class="fb">
+            <h2 class="fb-head">💬 Help us to improve your experience!</h2>
+            <div class="feedback">
+                <form action="https://formspree.io/f/xlgooggk" method="post">
+                    <input type="text" name="Feedback" placeholder="Give your valuable feedback..." class="fb-text"
+                        required>
+                    <button type="submit" class="fb-submit">Send Feedback</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>Copyright &copy; 2026 Apna Notez | All Rights Reserved</footer>
+
+    <!-- Optional: smooth scroll behavior & interactive console greeting -->
+    <script>
+        // simple console greeting for fun
+        console.log("%c📘 Apna Notez | Your study companion is ready!", "color: #3852B4; font-size: 16px; font-weight: bold;");
+        // Add a tiny hover effect on stats to make them even more interactive
+        const statCards = document.querySelectorAll('.info');
+        statCards.forEach(card => {
+            card.addEventListener('click', function(e) {
+                // just subtle ripple (no redirect interruption)
+                let ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 400);
+            });
+        });
+    </script>
+    <style>
+        /* ripple effect for cards */
+        .info {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: rippleAnim 0.4s linear;
+            pointer-events: none;
+        }
+        @keyframes rippleAnim {
+            to {
+                transform: scale(6);
+                opacity: 0;
+            }
+        }
+    </style>
+</body>
+
+</html>
