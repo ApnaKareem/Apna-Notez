@@ -160,8 +160,8 @@
             color: white;
         }
 
-        .card-header h3 {
-            font-size: 1.3rem;
+        .card-header h2 {
+            font-size: 2rem;
             margin-bottom: 0.3rem;
         }
 
@@ -174,7 +174,7 @@
             padding: 1.2rem;
         }
 
-        .subject {
+        .semester {
             font-size: 1rem;
             color: #1e2a5e;
             font-weight: 600;
