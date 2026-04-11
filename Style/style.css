@@ -97,6 +97,80 @@ main {
     line-height: 1.5;
 }
 
+
+/* Featured Section */
+        .featured {
+            margin: 2rem 0 2rem;
+            padding: 1rem 0;
+        }
+
+        .featured-head {
+            text-align: center;
+            font-size: 2rem;
+            color: #1e2a5e;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .featured-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .featured-card {
+            background: white;
+            padding: 2rem 1.5rem;
+            width: 280px;
+            text-align: center;
+            border-radius: 24px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(56, 82, 180, 0.1);
+        }
+
+        .featured-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(56, 82, 180, 0.15);
+        }
+
+        .featured-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .featured-card h3 {
+            font-size: 1.3rem;
+            color: #1e2a5e;
+            margin-bottom: 0.8rem;
+        }
+
+        .featured-card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1.2rem;
+            line-height: 1.4;
+        }
+
+        .featured-link {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: #3852B4;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .featured-link:hover {
+            background: #2a3f94;
+            transform: scale(1.02);
+        }
+
+
 /* Stats Cards */
 .head {
     text-align: center;
@@ -293,12 +367,22 @@ footer {
 }
 
 @media (max-width: 480px) {
-    .greet-text {
-        font-size: 1.7rem;
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .head{
+    .greet-text {
+        font-size: 1.5rem;
+    }
+
+    .head {
         font-size: 1.4rem;
+    }
+
+    .featured-head{
+        font-size: 1.5rem;
     }
 
     main {
@@ -310,13 +394,18 @@ footer {
     }
 
     .info {
-        width: 130px;
+        width: 135px;
         font-size: 1.4rem;
         padding: 1rem 0.5rem;
     }
 
+    .fb{
+        padding: 1.5rem 1.5rem;
+    }
+
     .fb-head {
-        font-size: 1.3rem;
+        font-size: 1rem;
+        margin-bottom: 1rem;
     }
 
     .fb-text {
@@ -325,6 +414,10 @@ footer {
 
     .fb-submit {
         padding: 0.7rem 1.5rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
     }
 }
 

@@ -12,7 +12,7 @@ body {
     flex-direction: column;
 }
 
-/* Header with Glassmorphism */
+/* Modern Header with Glassmorphism */
 header {
     background: rgba(56, 82, 180, 0.95);
     backdrop-filter: blur(8px);
@@ -62,6 +62,7 @@ nav ul li a:hover {
     color: #FFE8C5;
     transform: translateY(-2px);
 }
+
 
 /* Main Content */
 main {
@@ -127,18 +128,18 @@ main {
     border-left: 10px solid black;
 }
 
-.section-1 a{
+.section-1 a {
     border-radius: 27px;
 }
 
-.section-1 a:hover{
+.section-1 a:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 25px 40px rgba(0, 0, 0, 0.3);
 }
 
 /* Individual semester colors */
 .textbooks[data-sem="1"] {
-    background: linear-gradient(135deg,	#ff3730, #ff0800);
+    background: linear-gradient(135deg, #ff3730, #ff0800);
 }
 
 .textbooks[data-sem="2"] {
@@ -182,7 +183,7 @@ main {
         transform: scale(10);
         opacity: 0;
     }
-} 
+}
 
 a {
     text-decoration: none;
@@ -285,7 +286,21 @@ footer {
     }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 480px) {
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header .brand, nav{
+        margin-bottom: -8px;
+    }
+
+    .head {
+        font-size: 1.8rem;
+    }
+
     main {
         padding: 1rem;
     }
@@ -295,8 +310,8 @@ footer {
     }
 
     .textbooks {
-        width: 170px;
-        height: 210px;
+        width: 160px;
+        height: 200px;
         font-size: 1.2rem;
     }
 
@@ -304,13 +319,22 @@ footer {
         font-size: 1.5rem;
     }
 
+    .why-textbooks {
+        padding: 1.5rem;
+    }
+
     .why-textbooks h2 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .why-textbooks li {
-        font-size: 0.95rem;
+        width: 90%;
+        font-size: 0.9rem;
         padding: 0.5rem 1rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
     }
 }
 
