@@ -6,7 +6,8 @@
 
 body {
     font-family: system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
-    background: linear-gradient(145deg, #f8f9ff 0%, #f0f3fd 100%);
+    /* background: linear-gradient(145deg, #f8f9ff 0%, #f0f3fd 100%); */
+    background-color:#16263F;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -14,10 +15,11 @@ body {
 
 /* Modern Header with Glassmorphism */
 header {
-    background: rgba(56, 82, 180, 0.95);
+    /* background: rgba(56, 82, 180, 0.95); */
+    background:#FFC107;
     backdrop-filter: blur(8px);
-    padding: 1rem 2rem;
-    color: white;
+    padding: 0.7rem 2rem;
+    /* color: white; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,6 +30,19 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
+    color: #FFFFFF;
+}
+
+.brand-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    /* background-color: #FFFFFF; */
+}
+
+.brand-img{
+    width: 50px;
 }
 
 .brand {
@@ -38,7 +53,8 @@ header {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    color:#1E2F4D;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 nav ul {
@@ -48,7 +64,7 @@ nav ul {
 }
 
 nav ul li a {
-    color: white;
+    color:#1E2F4D;
     text-decoration: none;
     font-weight: 600;
     padding: 0.5rem 0.8rem;
@@ -59,10 +75,9 @@ nav ul li a {
 
 nav ul li a:hover {
     background: rgba(255, 255, 255, 0.2);
-    color: #FFE8C5;
+    color: blue;
     transform: translateY(-2px);
 }
-
 
 /* Main Content */
 main {
@@ -81,7 +96,7 @@ main {
     background: linear-gradient(135deg, #1e2a5e, #3852B4);
     background-clip: text;
     -webkit-background-clip: text;
-    color: transparent;
+    color: #FFFFFF;
     position: relative;
     display: inline-block;
     width: 100%;
@@ -261,10 +276,10 @@ a {
 
 /* Footer */
 footer {
-    background: #1a2a6c;
+    background: #FFC107;
     text-align: center;
     padding: 1.2rem;
-    color: #cfd9ff;
+    color: #1E2F4D;
     font-weight: 500;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
