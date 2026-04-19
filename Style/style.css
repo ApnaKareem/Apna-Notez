@@ -329,14 +329,30 @@ main {
 
 /* Footer */
 footer {
-    /* background: #1a2a6c; */
     background: #FFC107;
     text-align: center;
-    padding: 1.2rem;
-    /* color: #cfd9ff; */
+    padding: 0.5rem;
     color:#1E2F4D;
     font-weight: 500;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social a{
+    color: #1E2F4D;
+    font-size: 1.5rem;
+}
+
+hr{
+    margin-top: 0.5rem;
+    border: 1px solid white;
+    margin-bottom: 0.5rem;
 }
 
 /* Animations */
